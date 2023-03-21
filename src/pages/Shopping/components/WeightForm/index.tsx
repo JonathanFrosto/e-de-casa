@@ -1,9 +1,17 @@
 import { CheckboxIndicator } from "@radix-ui/react-checkbox";
 import { Check } from "phosphor-react";
 import { useState } from "react";
-import { Checkbox } from "./style";
+import { UseFormRegisterReturn } from "react-hook-form";
+import { Input } from "../../../../components/Form/style";
+import { Checkbox, WeightFormContainer } from "./style";
 
-export function WeightForm() {
+interface WeightFormProps {
+  labelName: string
+  placeHolderDescription: string,
+  registration: UseFormRegisterReturn<string>
+}
+
+export function WeightForm({labelName, placeHolderDescription, registration} : WeightFormProps) {
   const [checked, setChecked] = useState(false);
 
   function handleCheckedChange(checked: boolean) {
@@ -11,14 +19,14 @@ export function WeightForm() {
   }
 
   return (
-    <div >
-      <Checkbox id="weight" onCheckedChange={handleCheckedChange}>
+    <WeightFormContainer >
+      <Checkbox id="input" onCheckedChange={handleCheckedChange}>
         <CheckboxIndicator >
           <Check />
         </CheckboxIndicator>
       </Checkbox>
-      <label htmlFor="weight">Pesável?</label>
-      <input type="number" style={!checked ? { visibility: "hidden" } : {}} placeholder="Peso" />
-    </div>
+      <label htmlFor="input">{labelName}</label>
+      <Input {...registration} type="number" style={!checked ? { visibility: "hidden" } : {}} placeholder={placeHolderDescription} />
+    </WeightFormContainer>
   )
 }

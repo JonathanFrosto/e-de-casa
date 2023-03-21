@@ -1,10 +1,25 @@
 import styled from "styled-components";
+import { ListItem as GenericListItem } from "../../components/ListItem/style";
 
-export const Header = styled.header`
-  margin-bottom: 6rem;
+export const ShoppingListsWrapper = styled.main`
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 
-  h1 {
-    font-size: 3rem;
+  /* form {
+    button {
+      margin-top: 1.5rem;
+    }
+  } */
+`
+export const ListItem = styled(GenericListItem)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 `
-

@@ -13,11 +13,11 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: ${(props) => props.theme.pastel};
+    -webkit-font-smoothing: antialiased;
   }
 
   body, button, input, text-area {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
+    font: 400 1rem 'Roboto', sans-serif;
   }
 
   :focus {
@@ -30,5 +30,6 @@ export const GlobalStyle = createGlobalStyle`
 
   input, button {
     border: 0;
+    outline: 0;
   }
 `

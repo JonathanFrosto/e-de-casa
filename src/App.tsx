@@ -7,7 +7,7 @@ import { defaultTheme } from "./styles/theme/default";
 function App() {
   return (
     <ThemeProvider theme={defaultTheme} >
-      <BrowserRouter >
+      <BrowserRouter  >
         <GlobalStyle />
         <Router />
       </BrowserRouter>
